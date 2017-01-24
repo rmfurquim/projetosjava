@@ -19,6 +19,7 @@ public class RemoveContatoLogic implements Logica {
 		contato.setId(id);
 	
 		Connection cnn = (Connection) req.getAttribute("conexao");
+
 		ContatoDao dao = new ContatoDao(cnn);
 		dao.exclui(contato);
 		System.out.println("Excluindo contato.....");
