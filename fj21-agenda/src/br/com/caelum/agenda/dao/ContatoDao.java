@@ -23,6 +23,10 @@ public class ContatoDao {
 		}
 	}
 
+	public ContatoDao(Connection cnn) {
+		this.connection = cnn;
+	}
+
 	public void adiciona(Contato contato) {
 		try {
 			String sql = "insert into contatos (nome, email, endereco, dataNascimento) values (?,?,?,?)";

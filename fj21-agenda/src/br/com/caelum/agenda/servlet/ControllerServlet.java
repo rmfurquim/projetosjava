@@ -25,11 +25,10 @@ public class ControllerServlet extends HttpServlet {
 		String nomeDaClasse = "br.com.caelum.mvc.logica." + parametro;
 		
 		try
-		{
-			@SuppressWarnings("rawtypes")
-			Class classe = Class.forName(nomeDaClasse);
+		{	Class classe = Class.forName(nomeDaClasse);
 			Logica logica = (Logica) classe.newInstance();
 			String pagina = logica.executa(req, res);
+			System.out.println(" Executei a Servlet ....." );
 			req.getRequestDispatcher(pagina).forward(req, res);
 		} catch (Exception e)
 		{
